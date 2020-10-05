@@ -7,3 +7,7 @@ Created by Kenneth Reitz
 ## HTTP Status codes
 
 [Status_Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_code)
+
+## HTTPBin service by Kenneth
+
+[HTTPBin](https://httpbin.org)
