@@ -11,3 +11,7 @@ Created by Kenneth Reitz
 ## HTTPBin service by Kenneth
 
 [HTTPBin](https://httpbin.org)
+
+## Basic Access Authentication
+
+[Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
