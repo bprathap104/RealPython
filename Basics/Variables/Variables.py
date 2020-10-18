@@ -75,7 +75,7 @@ print(a)
 Variable Names
 # Any length allowed
 # Upper case characters allowed
-# Mixed case characters allowed
+# Mixed case characters allowed, but not a good practice
 """
 this_is_a_really_really_really_long_name = 40
 CONSTANT = 40
@@ -96,5 +96,14 @@ PEP-8
 """
 ## https://www.python.org/dev/peps/pep-0008/
 
-
+"""
+Variable Names
+Reserved Keywords
+"""
+print(help("keywords"))
+import keyword
+print(keyword.kwlist)
+print(len(keyword.kwlist))
+print(keyword.iskeyword("C"))
+print(keyword.iskeyword("for"))
 
