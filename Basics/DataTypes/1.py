@@ -170,3 +170,182 @@ print(int('1010', base=2))
 print(bin(10))
 print(oct(10))
 print(hex(10))
+print(float(4))
+print(complex(10))
+print(complex(4+3j))
+print(str(1234))
+print(bool(0))
+print(bool(1))
+print(bool(1234))
+"""
+Functions - Iterables & Iterators
+"""
+a = [1,2,3,4,5,6]
+print(len(a))
+a = [True, True, True]
+b = [True, False, True]
+c = [False, False, False]
+
+print(any(a))
+print(any(b))
+print(any(c))
+print(all(a))
+print(all(b))
+print(all(c))
+
+d = [1,2,4,7,3,9,22]
+print(len(d))
+e = reversed(d)
+print(e)
+print(list(e))
+f = sorted(d)
+print(f)
+
+a = range(10)
+print(a)
+print(list(a))
+print(list(range(10)))
+print(list(range(0,10,2)))
+
+"""
+Functions - Iterables & Iterators
+Enumerate
+"""
+players = ['bob', 'bryan', 'tim', 'cook']
+counter = 0
+for player in players:
+    print(counter, player)
+    counter += 1
+
+for count, player in enumerate(players):
+    print(count, player)
+
+"""
+Functions - Iterables & Iterators
+zip
+"""
+number_list = [1,2,3,4,5,6]
+alpha_list = ['a','b','c','d','e','f']
+
+merged = []
+for i in range(len(number_list)):
+    merged.append((number_list[i], alpha_list[i]))
+print(merged)
+
+merged_1 = zip(number_list, alpha_list)
+print(merged_1)
+print(list(merged_1))
+
+
+"""
+Functions - Iterables & Iterators
+Iter & Next
+"""
+a = iter([1,2,3,4,5,6])
+print(next(a))
+print(next(a))
+print(next(a))
+print(next(a))
+print(next(a))
+print(next(a))
+## print(next(a))   # This will produce stopiteration as list is exhausted
+
+
+"""
+Functions - Input & Output
+print
+"""
+for i in range(100):
+    print(i)
+for i in range(100):
+    print(i, end=' ')
+print()
+
+"""
+Functions - Input & Output
+open
+"""
+file = open('test.txt', 'w')
+file.write("Hello World\n")
+file.close()
+
+file = open('test.txt', 'r')
+print(file.readlines())
+file.close()
+
+"""
+Functions - Variables, References & Scope
+Part-1 - DIR
+"""
+a = 'hello'
+print(a.upper())
+print(a.capitalize())
+dir(a)                      ## dir works with any kind of objects in python
+print(a.center(50))
+import datetime
+dir(datetime)
+dir(datetime.datetime)
+
+"""
+Functions - Variables, References & Scope
+Part-2 - Vars & Globals
+"""
+a = 1
+b = 'global'
+c = 'another global'
+
+def function():
+    a = 2
+    b = 'local'
+    print(a, b)
+
+print(a, b)
+function()
+print(a, b)
+####### 
+
+a = 1
+b = 'global'
+c = 'another global'
+
+def function():
+    a = 2
+    b = 'local'
+    print(a, b)
+    print(vars())
+
+print(a, b)
+function()
+print(a, b)
+print(globals())
+
+
+"""
+Miscellaneous
+Exec
+"""
+# import os
+# job = input("Enter you job to execute: ")
+# exec(job, {"pow": pow})
+## This allows only pow function to be called
+
+"""
+Miscellaneous
+Hash
+"""
+
+print(hash(123456))
+print(hash('Hello world from Real Python!'))
+print(hash('Hello world from Real Python.'))
+
+with open('Pipfile','r') as file_obj:
+    pip_list = file_obj.readlines()
+
+pip_1 = ''.join(pip_list)
+pip_2 = ''.join(pip_list)
+
+print(hash(pip_1) == hash(pip_2))   ## Returns True
+
+pip_2 += ' '
+
+print(hash(pip_1) == hash(pip_2))   ## Returns False
